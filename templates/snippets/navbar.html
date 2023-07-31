@@ -1,0 +1,14 @@
+{% load static %}
+
+<nav class="navbar">
+    <div class="logo">
+        <h2>Kang <span>Joki :/</span></h2>
+    </div>
+    <div class="navigations">
+        <a href="{% url 'home' %}">Beranda</a>
+        <a href="{% url 'blog:blog_index' %}">Blog</a>
+    </div>
+    <div class="burger">
+        <i data-feather="menu"></i>
+    </div>
+</nav>

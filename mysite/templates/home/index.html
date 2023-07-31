@@ -1,0 +1,80 @@
+<!-- Load Root Templates -->
+{% extends 'base.html' %}
+
+<!-- Load Static -->
+{% load static %}
+
+<!-- Block Style untuk home -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
+{% endblock style %}
+
+<!-- Tulis Body HTML disini tanpa tag body -->
+{% block container %}
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <div class="text">
+        <h1>Tugas Anda Adalah Tugas Kami. <span>Bersantailah! :D</span></h1>
+        <img id="center" src="{% static 'home/images/sibuk.png' %}" alt="Gambar orang sibuk">
+        <p>Serahkan semua tugas sekolah anda kepada kami. Tugas anda adalah tugas kami. Waktu kami adalah waktu anda. Enjoy your time : )</p>
+        <div class="cta">
+            <a href="#contact">Joki Sekarang</a>
+            <a href="#about">Kang Joki?</a>
+        </div>
+    </div>
+    <img id="side" src="{% static 'home/images/sibuk.png' %}" alt="Gambar orang sibuk">
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="about-us">
+        <h1>Kenapa Memilih Kang Joki ?</h1>
+        <p>Kang Joki adalah tempat anda menemukan jasa joki terperca, termurah, dengan kualitas yang sangat baik.</p>
+        <a href="#contact">Hubungi Kami</a>
+    </div>
+    <div class="about-blog">
+        <a href="{% url 'blog:blog_index' %}">Kunjungi Blog Kang Joki :/</a>
+        <h1>Berbagi <span>Materi Gratis</span> Untuk Melengkapi Karya Anda</h1>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <h1>Kontak <span>Kang Joki</span> :)</h1>
+    <p>FYP (For Your Problem or Problems) :p</p>
+    <div class="cards">
+        <div class="card wa">
+            <h2>WhatsApp</h2>
+            <a target="_blank" href="https://wa.me/6282121342641">Mimin 1</a>
+        </div>
+
+        <div class="card tg">
+            <h2>Telegram</h2>
+            <a target="_blank" href="https://t.me/fynnn77">Mimin 1</a>
+        </div>
+
+        <div class="card ig">
+            <a target="_blank" href="https://www.instagram.com/kang_joki022/"><h2>Instagram</h2></a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Created by Nurfian Qodar <a href="https://www.instagram.com/imfyn77/" target="_blank"><i data-feather="instagram"></i></a>  | &copy; 2023 </p>
+    </div>
+</section>
+
+
+
+{% endblock container %}
+
+<!-- Hubungkan Java Script static disini -->
+{% block script %}
+<script src="{% static 'home/script/script.js' %}"></script>
+
+<!-- Feather Icons -->
+<script>
+    feather.replace()
+</script>
+{% endblock script %}

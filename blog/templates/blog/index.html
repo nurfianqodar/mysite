@@ -1,0 +1,51 @@
+<!-- Load Root Templates -->
+{% extends 'base.html' %}
+
+<!-- Load Static -->
+{% load static %}
+
+<!-- Block Style untuk home -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+{% endblock style %}
+
+<!-- Tulis Body HTML disini tanpa tag body -->
+{% block container %}
+<section class="home-blog">
+    <div class="banner">
+        <h1>{{ HEADER }}</h1>
+        <p>Membuka Tabir Rahasia Alam Semesta.</p>
+    </div>
+
+    <div class="category">
+        <h1>Kategori</h1>
+        <div class="links">
+            <a href="{% url 'blog:blog_index' %}">Semua</a>
+            {% for cat in CATS %}
+            <a href="{% url 'blog:category' CAT_INPUT=cat %}">{{cat}}</a>
+            {% endfor cat in CATS %}
+        </div>
+    </div>
+    <div class="recent">
+        <h1>{{SUBTITLE}}</h1>
+        <div class="links">
+            {% for blog in BLOGS %}
+            <a href="{% url 'blog:blog' CAT_INPUT=blog.category SLUG_INPUT=blog.slug %}">
+                <h3>{{blog.title}}</h3>
+                <div class="identity">
+                    <span>Author : {{blog.author}}</span>
+                    <span>Kategori : {{blog.category}}</span>
+                    <span>Diunggah pada : {{blog.date}}</span>
+                </div>
+            </a>
+            {% endfor%}
+        </div>
+        
+    </div>
+</section>
+{% endblock container %}
+
+<!-- Hubungkan Java Script static disini -->
+{% block script %}
+<script src="{% static 'blog/script/script.js' %}"></script>
+{% endblock script %}
